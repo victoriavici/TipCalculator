@@ -11,6 +11,7 @@ import SwiftUI
 struct CalculateTheTipApp: App {
     var body: some Scene {
         WindowGroup {
+            // toto by si konecne mohla volat inak nejako konkretnejsie
             ContentView()
         }
     }
