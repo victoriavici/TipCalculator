@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
-                
+                // sem sa nedava medzera
                 TextField("Cost of service", value: $viewModel.totalInput, format: .number)
                     .textFieldStyle(.roundedBorder)
                     .padding()
@@ -27,7 +27,9 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     CheckView(isChecked: $viewModel.isChecked1,
                         title: "Amazing (20%)",
-                        onAction: { viewModel.isChecked2 = false
+                        onAction: { 
+                         // zbytocna logika tu, isChacked property sa daju uoravovat priamo vo viewModel, staci pridat akciu ze change Choise ktora sa o to postara
+                         viewModel.isChecked2 = false
                                     viewModel.isChecked3 = false
                                     viewModel.myChoice = .amazing
                     })
@@ -63,6 +65,7 @@ struct ContentView: View {
                     
                 }
                 
+                // toto nema co robit vo vnuty body vytiahnut von
                 let formattedTip = String(format: "%.2f€", viewModel.tip)
                 Text("Tip amount: \(formattedTip)").padding()
             }
@@ -72,6 +75,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+     // nezabezpeci ti zmenu farebnej schemy v celej apke, to treba urobit inak
         ContentView().preferredColorScheme(.light)
     }
 }
