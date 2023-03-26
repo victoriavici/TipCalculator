@@ -13,12 +13,13 @@ struct CheckView: View {
     @Binding var isChecked: Bool
     var title: String
     
-    var onAction: ()  -> Void
-    
+    var onAction: () -> Void
+    // medzera navyse
     
     var body: some View {
         VStack {
             Button {
+                // ak chces zmenit hodnotu bool na opacnu swift ma na to operator toggle: someBool.toggle()
                 isChecked = !isChecked
                 onAction()
             }label:{
@@ -28,11 +29,12 @@ struct CheckView: View {
                         
                     Text(title)
                         .foregroundColor(.black)
-                        
+                     // medzera navyse
                 }
             }
         }
         .frame(alignment: .leading)
         .padding(.horizontal)
     }
+    // tu chybala medzera
 }

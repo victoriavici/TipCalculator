@@ -11,6 +11,7 @@ import SwiftUI
 struct CalculateTheTipApp: App {
     var body: some Scene {
         WindowGroup {
+            // zmenit naming na nieco konkretne, content view uplne nebude to co chces pouzivat vzdy a vsade
             ContentView()
         }
     }
